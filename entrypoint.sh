@@ -1,27 +1,12 @@
-#!/bin/sh
+#!/bin/bash
 
 set -eu
 
-url=$1
-user=$2
-token=$3
-job=$4
-parameters=$5
+HOST="$1"
+WEBHOOK_SECRET="$2"
+JOB="$3"
+JOB_TOKEN="$4"
+JOB_PARAMETERS="secret=$WEBHOOK_SECRET&job=$JOB&token=$JOB_TOKEN"
+URL="$HOST/buildByToken/buildWithParameters?BRANCH=$GITHUB_HEAD_REF&$JOB_PARAMETERS"
 
-credential="$user:$token"
-jobPath="$url/$job"
-
-if [ -n $parameters ]
-then
-    if [ $parameters == "BRANCH" ]
-    then
-        parameters="BRANCH=$GITHUB_HEAD_REF"
-    fi
-    jobPathParameter="$jobPath/buildWithParameters?$parameters"
-else
-    jobPathParameter=$jobPath
-fi
-
-
-/usr/bin/curl -X POST -u $credential $jobPathParameter
-
+/usr/bin/curl $URL
