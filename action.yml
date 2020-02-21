@@ -1,28 +1,20 @@
 # action.yml
-name: jenkins-action-parametrized
-author: Antoni Florit Homar
-description: github action, to be able to run jenkins jobs remotely with or without parameters
+name: jenkins-build-by-token-action
+author: Gregory Becker
+description: github action, to be able to run jenkins jobs remotely
 inputs:
-  url:
-    description: 'Jenkins URL'
+  webhook_host:
     required: true
-    default: 'toniflorithomar.cat'
-  user:
-    description: 'Jenkins USER'
+    description: The Webhook host (eg. http://webhook.jenkins.com:8080)
+  webhook_secret:
     required: true
-    default: 'test'
-  token:
-    description: 'Jenkins USER TOCKEN'
+    description: The Webhook secret
+  job_path:
     required: true
-    default: 'test'
-  job:
-    description: 'Jenkins USER TOCKEN'
+    description: Job to be triggered (eg. folder1/folder2/my-job)
+  job_token:
     required: true
-    default: '/job/test'
-  parameters:
-    description: 'Jenkins Parameters'
-    required: true
-    default: 'test,test2'
+    description: Job token
 outputs:
   response:
     description: 'Jenkins cURL response'
@@ -30,11 +22,10 @@ runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
-    - ${{ inputs.url }}
-    - ${{ inputs.user }}
-    - ${{ inputs.token }}
-    - ${{ inputs.job }}
-    - ${{ inputs.parameters }}
+    - ${{ inputs.webhook_host }}
+    - ${{ inputs.webhook_secret }}
+    - ${{ inputs.job_path }}
+    - ${{ inputs.job_token }}
 branding:
   icon: 'arrow-right-circle'
   color: 'gray-dark'
