@@ -12,11 +12,10 @@
 
 ##### `jenkins`
 
-**Required** webhook_host Parameter. Default `"https://toniflorithomar.cat"`.
-**Required** webhook_secret Parameter. Default `"test"`.
-**Required** job_path Parameter. Default `"test"`.
-**Required** job_token Parameter. Default `"/job/test"`.
-**OPTIONAL** parameters Parameter. Default `"test1&test2&test3"`. (Use & separator)
+**Required** webhook_host Parameter. Default `"https://toniflorithomar.cat"`.  
+**Required** webhook_secret Parameter. Default `"test"`.  
+**Required** job_path Parameter. Default `"test"`.  
+**Required** job_token Parameter. Default `"/job/test"`.  
 
 #### Example usage11
 
