@@ -6,19 +6,6 @@
 
 ## USAGE
 
-### GitHub Actions
-
-#### Inputs
-
-##### `jenkins`
-
-**Required** webhook_host Parameter. Default `"https://toniflorithomar.cat"`.  
-**Required** webhook_secret Parameter. Default `"test"`.  
-**Required** job_path Parameter. Default `"test"`.  
-**Required** job_token Parameter. Default `"/job/test"`.  
-
-#### Example usage11
-
 ```bash
 name: trigger jenkins job
 on: [push]
