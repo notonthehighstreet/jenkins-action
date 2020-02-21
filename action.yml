@@ -15,6 +15,9 @@ inputs:
   job_token:
     required: true
     description: Job token
+  job_parameters:
+    required: false
+    description: Job build parameters
 outputs:
   response:
     description: 'Jenkins cURL response'
