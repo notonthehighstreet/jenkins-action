@@ -1,4 +1,4 @@
-# GITHUB jenkins action parametrized
+# Github action: jenkins-build-by-token
 
 [![Travis][travis-image]][travis-url]
 ![License][license-image]
