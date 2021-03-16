@@ -29,7 +29,7 @@ runs:
     - ${{ inputs.webhook_secret }}
     - ${{ inputs.job_path }}
     - ${{ inputs.job_token }}
-    - ${{ inputs.build_parameters }}
+    - ${{ inputs.job_parameters }}
 branding:
   icon: 'arrow-right-circle'
   color: 'gray-dark'
